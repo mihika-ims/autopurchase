@@ -1,5 +1,7 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalInfoComponent } from '../modal-info/modal-info.component';
 
 @Component({
   selector: 'lib-purchase-ai',
@@ -9,21 +11,14 @@ import { FormControl } from '@angular/forms';
 export class PurchaseAiComponent {
   selectedTab = 'pending';
   documentType = 'Purchase Invoice';
-
-  data = [
-    { image: 'https://via.placeholder.com/40', uploadBy: 'John', filename: 'file1.pdf', uploadDate: new Date() },
-    { image: 'https://via.placeholder.com/40', uploadBy: 'Jane', filename: 'file2.pdf', uploadDate: new Date() },
-    { image: 'https://via.placeholder.com/40', uploadBy: 'Jane', filename: 'file2.pdf', uploadDate: new Date() },
-    { image: 'https://via.placeholder.com/40', uploadBy: 'Jane', filename: 'file2.pdf', uploadDate: new Date() },
-    { image: 'https://via.placeholder.com/40', uploadBy: 'Jane', filename: 'file2.pdf', uploadDate: new Date() },
-    { image: 'https://via.placeholder.com/40', uploadBy: 'Jane', filename: 'file2.pdf', uploadDate: new Date() }
-
-  ];
-
-  filteredData = [...this.data];
-   constructor(private cdr: ChangeDetectorRef) {}
+   constructor(private cdr: ChangeDetectorRef, private dialog: MatDialog) {}
 
   ngAfterViewInit() {
     this.cdr.detectChanges();
+  }
+  openInfoModal() {
+  this.dialog.open(ModalInfoComponent, {
+    width: '600px'
+  });
   }
 }

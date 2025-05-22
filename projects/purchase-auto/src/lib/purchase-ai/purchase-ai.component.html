@@ -1,4 +1,4 @@
-<div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0, 0, 0, 0.5);">
+<div class="modal fade show d-block" style="background-color: rgba(0, 0, 0, 0.5);">
     <div class="modal-dialog modal-xl modal-dialog-centered">
 
         <div class="modal-content">
@@ -6,16 +6,16 @@
                 [cancelButtonText]="'CANCEL'"></lib-modal-header>
             <!-- tabs -->
             <div class="nav nav-tabs mb-3">
-    <div class="row w-100">
-        <div class="col-md-9"><lib-modal-tabs></lib-modal-tabs></div>
-        <div class="col-md-3 d-flex justify-content-between align-items-center mb-3">
-            <button mat-icon-button color="primary">
-                <mat-icon>i</mat-icon>
-            </button>
-            Info
-        </div>
-    </div>
-</div>
+                <div class="row w-100">
+                    <div class="col-md-9"><lib-modal-tabs></lib-modal-tabs></div>
+                    <div class="col-md-3 d-flex justify-content-end">
+                        <button mat-icon-button color="primary" (click)="openInfoModal()">
+                            <mat-icon>i</mat-icon>
+                        </button>
+                        Info
+                    </div>
+                </div>
+            </div>
 
             <div class="row mb-3 align-items-center">
                 <div class="col-md-4">

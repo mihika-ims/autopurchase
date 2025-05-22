@@ -7,3 +7,5 @@ export * from './lib/purchase-auto.component';
 export * from './lib/purchase-auto.module';
 export * from './lib/modal-header/modal-header.component';
 export * from './lib/modal-table/modal-table.component';
+export * from './lib/modal-info/modal-info.component';
+export * from './lib/modal-tabs/modal-tabs.component';
