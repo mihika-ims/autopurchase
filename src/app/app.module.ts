@@ -1,18 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { PurchaseAutoModule } from 'projects/purchase-auto/src/lib/purchase-auto.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, 
+    
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
+    AppRoutingModule,
+    PurchaseAutoModule,
+    NgxPaginationModule
+    
+],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

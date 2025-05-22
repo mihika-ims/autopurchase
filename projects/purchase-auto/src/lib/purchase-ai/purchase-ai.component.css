@@ -1,0 +1,15 @@
+/* Tab Buttons */
+  .nav-link{
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: black;
+  }
+  
+  .nav-link.active {
+    border-bottom: 3px solid #336799;
+    font-weight: bold;
+    background-color: #F2F2F2;
+  }

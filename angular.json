@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -96,12 +97,78 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           }
         }
       }
+    },
+    "purchase-ai": {
+      "projectType": "library",
+      "root": "projects/purchase-ai",
+      "sourceRoot": "projects/purchase-ai/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/purchase-ai/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/purchase-ai/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/purchase-ai/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/purchase-ai/src/test.ts",
+            "tsConfig": "projects/purchase-ai/tsconfig.spec.json",
+            "karmaConfig": "projects/purchase-ai/karma.conf.js"
+          }
+        }
+      }
+    },
+    "purchase-auto": {
+      "projectType": "library",
+      "root": "projects/purchase-auto",
+      "sourceRoot": "projects/purchase-auto/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/purchase-auto/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/purchase-auto/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/purchase-auto/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/purchase-auto/src/test.ts",
+            "tsConfig": "projects/purchase-auto/tsconfig.spec.json",
+            "karmaConfig": "projects/purchase-auto/karma.conf.js"
+          }
+        }
+      }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
