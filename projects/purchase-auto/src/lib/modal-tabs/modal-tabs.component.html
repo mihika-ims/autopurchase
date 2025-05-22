@@ -1,4 +1,4 @@
-<mat-tab-group [(selectedIndex)]="selectedIndex">
+<mat-tab-group [(selectedIndex)]="selectedIndex" [dynamicHeight]="false">
   <mat-tab *ngFor="let tab of tabs">
     <ng-template mat-tab-label>
       {{ tab.label }}

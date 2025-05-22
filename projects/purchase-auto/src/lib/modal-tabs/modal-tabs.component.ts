@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild,   ChangeDetectorRef} from '@angular/core';
 import { TemplateRef } from '@angular/core';
 
 @Component({
@@ -9,17 +9,18 @@ import { TemplateRef } from '@angular/core';
 
 export class ModalTabsComponent implements AfterViewInit {
   selectedIndex = 0;
-
-  @ViewChild('pendingTab') pendingTab!: TemplateRef<any>;
-  @ViewChild('CompleteTab') CompleteTab!: TemplateRef<any>;
-
   tabs: { label: string; content: TemplateRef<any> }[] = [];
+
+  @ViewChild('pendingContent') pendingContent!: TemplateRef<any>;
+  @ViewChild('completeContent') completeContent!: TemplateRef<any>;
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
     this.tabs = [
-      { label: 'pending', content: this.pendingTab },
-      { label: 'complete', content: this.CompleteTab }
+      { label: 'Pending', content: this.pendingContent },
+      { label: 'Complete', content: this.completeContent },
     ];
+    this.cdr.detectChanges();
   }
 }
-

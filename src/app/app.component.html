@@ -1,20 +1,3 @@
 
 <button (click)="showPurchaseAI = true">Auto Purchase</button>
 <lib-purchase-ai *ngIf="showPurchaseAI"></lib-purchase-ai>
-
-<lib-modal-header 
-  [title]="'Purchase AI'" 
-  [loadButtonText]="'LOAD'"
-  [cancelButtonText]="'CANCEL'"
-></lib-modal-header>
-
-
-<lib-modal-tabs>
-  <ng-template #pendingTab>
-  <p>This is the pending tab content.</p>
-</ng-template>
-
-<ng-template #CompleteTab>
-  <p>This is the complete content.</p>
-</ng-template>
-</lib-modal-tabs>
