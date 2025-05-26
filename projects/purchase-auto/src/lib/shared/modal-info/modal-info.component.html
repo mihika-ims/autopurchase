@@ -14,39 +14,40 @@
 
         <div *ngSwitchCase="1">
           <h5>Download Mobile app</h5>
-             Please scan the QR code below to download the Document Management Application to your mobile device.
-               <div class="qr-img"> 
-             <img src="/assets/3.svg" alt="Camera Button" />
-             </div>
+          Please scan the QR code below to download the Document Management Application to your mobile device.
+          <div class="qr-img">
+            <img src="/assets/3.svg" alt="Camera Button" />
+          </div>
           <div class="note">
-            <strong>Note :</strong> Note: This mobile application is designed to automatically organize files. Users are required to upload files via the mobile app, after which they can be accessed and loaded into the computer application.
+            <strong>Note :</strong> Note: This mobile application is designed to automatically organize files. Users are
+            required to upload files via the mobile app, after which they can be accessed and loaded into the computer
+            application.
           </div>
         </div>
 
-     <div *ngSwitchCase="2">
-  <h5>Login through the Mobile App</h5>
+        <div *ngSwitchCase="2">
+          <h5>Login through the Mobile App</h5>
 
+          <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+              <div class="form-row">
+                <label for="serverName" class="form-label">Server Name</label>
+                <input id="serverName" [(ngModel)]="serverName" class="input-field" />
+              </div>
 
- 
-  <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
-    <div style="flex: 1; min-width: 300px;">
-      <div class="form-row">
-        <label for="serverName" class="form-label">Server Name</label>
-        <input id="serverName" [(ngModel)]="serverName" class="input-field" />
-      </div>
+              <div class="form-row">
+                <label for="userName" class="form-label">User Name</label>
+                <input id="userName" [(ngModel)]="userName" class="input-field" />
+              </div>
 
-      <div class="form-row">
-        <label for="userName" class="form-label">User Name</label>
-        <input id="userName" [(ngModel)]="userName" class="input-field" />
-      </div>
+              <div class="form-row">
+                <label for="password" class="form-label">Password</label>
+                <input id="password" [(ngModel)]="password" type="password" class="input-field" />
+              </div>
+            </div>
 
-      <div class="form-row">
-        <label for="password" class="form-label">Password</label>
-        <input id="password" [(ngModel)]="password" type="password" class="input-field" />
-      </div>
-    </div>
-
-            <div style="background: #f9f9f9;padding: 1rem 2rem;border-radius: 8px;box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);text-align: center;min-width: 120px;">
+            <div
+              style="background: #f9f9f9;padding: 1rem 2rem;border-radius: 8px;box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);text-align: center;min-width: 120px;">
               <p style="margin: 0; font-weight: 600;">OTP :</p>
               <div style="font-size: 32px; font-weight: bold;">12124</div>
             </div>
@@ -79,7 +80,7 @@
       <button class="btn-action" *ngIf="currentStep > 1" mat-stroked-button (click)="prevStep()">
         BACK
       </button>
-&nbsp;
+      &nbsp;
       <button class="btn-action" *ngIf="currentStep < 3" mat-flat-button (click)="nextStep()">
         NEXT
       </button>

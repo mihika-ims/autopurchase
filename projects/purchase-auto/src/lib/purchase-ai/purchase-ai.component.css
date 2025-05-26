@@ -9,6 +9,7 @@
   max-width: 1400px !important;
   box-sizing: border-box;
 }
+
 .modal-content.shadow-lg.rounded-4 {
   height: 90vh;
   max-height: 90vh;

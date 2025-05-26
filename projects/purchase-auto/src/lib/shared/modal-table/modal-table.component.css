@@ -20,3 +20,7 @@
 .custom-mat-table tbody {
   border: none !important;
 }
+.action-btn{
+  background-color: #FFFFFF;
+  border: none;
+}

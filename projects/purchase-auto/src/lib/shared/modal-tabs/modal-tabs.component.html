@@ -1,16 +1,43 @@
-<mat-tab-group [(selectedIndex)]="selectedIndex" [dynamicHeight]="false">
-  <mat-tab *ngFor="let tab of tabs">
-    <ng-template mat-tab-label>
-      {{ tab.label }}
-    </ng-template>
-    <ng-container *ngTemplateOutlet="tab.content"></ng-container>
-  </mat-tab>
-</mat-tab-group>
+<div class="row align-items-center" style="background-color: #f5f5f5;">
+  <div class="col-md-9">
+    <mat-tab-group>
+      <mat-tab label="Pending"></mat-tab>
+      <mat-tab label="Complete"></mat-tab>
+    </mat-tab-group>
+  </div>
+  <div class="col-md-3 d-flex justify-content-end align-items-center">
+    <button mat-icon-button color="primary" (click)="openInfoModal()" class="me-2">
+      <img src="/assets/i.svg" alt="Info" width="34" height="34">
+    </button>
+    <span class="fw-semibold">Info</span>
+  </div>
+  <div *ngIf="showInfoModal" class="modal fade show d-block"
+    style="background: rgba(0,0,0,0.7); z-index: 2000; position: fixed; top: 0; left: 0;">
+    <lib-modal-info (close)="closeInfoModal()"></lib-modal-info>
+  </div>
+</div>
+<br>
 
-<ng-template #pendingContent>
-  <ng-container *ngIf="selectedIndex === 0">
-  </ng-container>
-</ng-template>
+<div class="row mb-3 align-items-end px-3">
+  <div class="col-md-2" style="display: flex; flex: 1; min-width: 300px;">
+    <mat-form-field appearance="outline" class="w-100">
+      <input matInput type="text" placeholder="Type to search..." />
+    </mat-form-field>
+  </div>
 
-<ng-template #completeContent>
-</ng-template>
+  <div class="col-md-4 mb-2 mb-md-0 d-flex justify-content-md-center" style="flex: 1; min-width: 300px;">
+    <button mat-flat-button color="primary" class="w-100" >
+      Filter By
+    </button>
+    <mat-label class="me-2">Document Type</mat-label>
+    <select id="documentType" class="form-select w-100" [(ngModel)]="documentType">
+      <option value="All">All</option>
+      <option value="Purchase Invoice">Purchase Invoice</option>
+      <option value="Purchase Order">Purchase Order</option>
+      <option value="Receipt">Receipt</option>
+    </select>
+  </div>
+  <div class="col-md-6 d-flex align-items-center">
+  </div>
+</div>
+<lib-modal-table></lib-modal-table>

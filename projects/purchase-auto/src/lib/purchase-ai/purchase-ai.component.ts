@@ -9,8 +9,7 @@ import { ModalInfoComponent } from '../shared/modal-info/modal-info.component';
   styleUrls: ['./purchase-ai.component.css']
 })
 export class PurchaseAiComponent {
-  selectedTab = 'pending';
-  documentType = 'Purchase Invoice';
+
 
   showInfoModal = false;
   constructor(private cdr: ChangeDetectorRef) { }

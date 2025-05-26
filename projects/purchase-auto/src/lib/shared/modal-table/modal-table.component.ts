@@ -8,17 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class ModalTableComponent {
   
     data = [
-      { image: 'https://via.placeholder.com/40', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
-      { image: 'https://via.placeholder.com/40', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
-      { image: 'https://via.placeholder.com/40', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
-      { image: 'https://via.placeholder.com/40', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
-      { image: 'https://via.placeholder.com/40', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
-      { image: 'https://via.placeholder.com/40', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
-      { image: 'https://via.placeholder.com/40', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
-      { image: 'https://via.placeholder.com/40', uploadBy: 'Mihika', filename: 'file2.pdf', uploadDate: new Date() },
-      { image: 'https://via.placeholder.com/40', uploadBy: 'Mahi', filename: 'file2.pdf', uploadDate: new Date() },
-       { image: 'https://via.placeholder.com/40', uploadBy: 'Mahiraa', filename: 'file2.pdf', uploadDate: new Date() },
-       { image: 'https://via.placeholder.com/40', uploadBy: 'Jane', filename: 'file2.pdf', uploadDate: new Date() },
+      { image: '/assets/1.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
+      { image: '/assets/1.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
+      { image: '/assets/1.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
+      { image: '/assets/1.png', uploadBy: 'Mihika', filename: 'file2.pdf', uploadDate: new Date() },
+      { image: '/assets/1.png', uploadBy: 'Mahi', filename: 'file2.pdf', uploadDate: new Date() },
+       { image: '/assets/1.png', uploadBy: 'Mahiraa', filename: 'file2.pdf', uploadDate: new Date() },
+       { image: '/assets/1.png', uploadBy: 'Jane', filename: 'file2.pdf', uploadDate: new Date() },
     ];
   
     filteredData = [...this.data];
