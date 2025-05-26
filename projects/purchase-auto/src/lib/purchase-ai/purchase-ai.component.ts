@@ -11,14 +11,18 @@ import { ModalInfoComponent } from '../shared/modal-info/modal-info.component';
 export class PurchaseAiComponent {
   selectedTab = 'pending';
   documentType = 'Purchase Invoice';
-   constructor(private cdr: ChangeDetectorRef, private dialog: MatDialog) {}
+
+  showInfoModal = false;
+  constructor(private cdr: ChangeDetectorRef) { }
 
   ngAfterViewInit() {
     this.cdr.detectChanges();
   }
   openInfoModal() {
-  this.dialog.open(ModalInfoComponent, {
-    width: '600px'
-  });
+    this.showInfoModal = true;
+  }
+
+  closeInfoModal() {
+    this.showInfoModal = false;
   }
 }

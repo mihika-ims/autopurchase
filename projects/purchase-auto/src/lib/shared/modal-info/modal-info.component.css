@@ -1,0 +1,74 @@
+.stepper-header {
+    display: flex;
+    gap: 1rem;
+    font-weight: 500;
+}
+
+.step {
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: black;
+}
+
+.step.active {
+    border-bottom: 3px solid #336799;
+    font-weight: bold;
+    color: #336799;
+    font-weight: bold;
+}
+
+.instruction-image {
+    width: 200px;
+    height: auto;
+    margin-top: 10px;
+    display: block;
+}
+
+.actions {
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.btn-action {
+    background-color: #336799;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.note{
+     margin-top: 1rem;
+      background-color: #e3f2fd;
+      padding: 1rem;
+      border-radius: 4px;
+      font-size: 14px;
+
+}
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  width: 120px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.input-field {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.qr-img{
+display: flex; 
+justify-content: center; 
+align-items: center; 
+margin: 1rem 0;
+
+} 
