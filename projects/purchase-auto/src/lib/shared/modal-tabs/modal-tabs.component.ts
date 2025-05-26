@@ -21,6 +21,7 @@ export class ModalTabsComponent implements AfterViewInit {
       { label: 'Pending', content: this.pendingContent },
       { label: 'Complete', content: this.completeContent },
     ];
+    this.selectedIndex = 0; // Set default selected tab
     this.cdr.detectChanges();
   }
 }

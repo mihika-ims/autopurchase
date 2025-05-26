@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalInfoComponent } from '../modal-info/modal-info.component';
+import { ModalInfoComponent } from '../shared/modal-info/modal-info.component';
 
 @Component({
   selector: 'lib-purchase-ai',

@@ -1,48 +1,53 @@
-<div class="modal fade show d-block" style="background-color: rgba(0, 0, 0, 0.5);">
+<div class="modal fade show d-block">
     <div class="modal-dialog modal-xl modal-dialog-centered">
-
-        <div class="modal-content">
-            <lib-modal-header [title]="'Purchase Ai'" [loadButtonText]="'LOAD'"
-                [cancelButtonText]="'CANCEL'"></lib-modal-header>
-            <!-- tabs -->
-            <div class="nav nav-tabs mb-3">
-                <div class="row w-100">
-                    <div class="col-md-9"><lib-modal-tabs></lib-modal-tabs></div>
-                    <div class="col-md-3 d-flex justify-content-end">
-                        <button mat-icon-button color="primary" (click)="openInfoModal()">
+        <div class="modal-content shadow-lg rounded-4">
+            <lib-modal-header
+             [title]="'Purchase AI'" 
+             [loadButtonText]="'LOAD'" 
+             [cancelButtonText]="'CANCEL'">
+            </lib-modal-header>
+            <div class="nav nav-tabs mb-3 border-bottom-0">
+                <div class="row w-100 align-items-center">
+                    <div class="col-md-9">
+                        <lib-modal-tabs></lib-modal-tabs>
+                    </div>
+                    <div class="col-md-3 d-flex justify-content-end align-items-center">
+                        <button mat-icon-button color="primary" (click)="openInfoModal()" class="me-2">
                             <mat-icon>i</mat-icon>
                         </button>
-                        Info
+                        <span class="fw-semibold">Info</span>
                     </div>
                 </div>
             </div>
 
-            <div class="row mb-3 align-items-center">
-                <div class="col-md-4">
+            <div class="row mb-3 align-items-end px-3">
+
+                <div class="col-md-4 mb-2 mb-md-0">
                     <mat-form-field appearance="outline" class="w-100">
-                        <mat-label>Search here...</mat-label>
-                        <input matInput type="text" />
+                        <mat-label>Search</mat-label>
+                        <input matInput type="text" placeholder="Type to search..." />
                     </mat-form-field>
                 </div>
-                <div class="col-md-3">
-                    <button class="btn btn-primary">Filter By</button>
-                </div>
-                <div class="col-md-4 d-flex">
 
-                    <mat-label>Type</mat-label>&nbsp;
-                    <select id="documentType" class="form-select" [(ngModel)]="documentType">
-                        <option>All</option>
-                        <option>Purchase Invoice</option>
-                        <option>Purchase Order</option>
-                        <option>Receipt</option>
+                <div class="col-md-3 mb-2 mb-md-0 d-flex justify-content-md-center">
+                    <button mat-flat-button color="primary" class="w-100">
+                        Filter By
+                    </button>
+                </div>
+
+                <div class="col-md-5 d-flex align-items-center">
+                    <mat-label class="me-2">Document Type:</mat-label>
+                    <select id="documentType" class="form-select w-100" [(ngModel)]="documentType">
+                        <option value="All">All</option>
+                        <option value="Purchase Invoice">Purchase Invoice</option>
+                        <option value="Purchase Order">Purchase Order</option>
+                        <option value="Receipt">Receipt</option>
                     </select>
                 </div>
             </div>
-            <!-- Table -->
-            <div class="table">
-                <table class="table text-center align-middle">
-                    <lib-modal-table></lib-modal-table>
-                </table>
+
+            <div class="mb-3 px-3">
+                <lib-modal-table></lib-modal-table>
             </div>
         </div>
     </div>
