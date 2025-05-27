@@ -11,25 +11,23 @@
     </button>
     <span class="fw-semibold">Info</span>
   </div>
-  <div *ngIf="showInfoModal" class="modal fade show d-block"
-    style="background: rgba(0,0,0,0.7); z-index: 2000; position: fixed; top: 0; left: 0;">
+  <div *ngIf="showInfoModal" class="modal fade show d-block">
     <lib-modal-info (close)="closeInfoModal()"></lib-modal-info>
   </div>
 </div>
 <br>
-
 <div class="row mb-3 align-items-end px-3">
-  <div class="col-md-2" style="display: flex; flex: 1; min-width: 300px;">
+  <div class="col-md-3">
     <mat-form-field appearance="outline" class="w-100">
       <input matInput type="text" placeholder="Type to search..." [(ngModel)]="searchTerm"/>
     </mat-form-field>
   </div>
 
-  <div class="col-md-4 mb-2 mb-md-0 d-flex justify-content-md-center" style="flex: 1; min-width: 300px;">
+  <div class="col-md-4 mb-2 mb-md-0 d-flex justify-content-md-center" >
     <button mat-flat-button color="primary" class="w-100" >
       Filter By
     </button>
-    <mat-label class="me-2">Document Type</mat-label>
+    <label for="documentType" class="yes">DocumentType:</label>
     <select id="documentType" class="form-select w-100" [(ngModel)]="documentType">
       <option value="All">All</option>
       <option value="Purchase Invoice">Purchase Invoice</option>
@@ -37,7 +35,7 @@
       <option value="Receipt">Receipt</option>
     </select>
   </div>
-  <div class="col-md-6 d-flex align-items-center">
+  <div class="col-md-5 d-flex align-items-center">
   </div>
 </div>
 <lib-modal-table [search]="searchTerm"></lib-modal-table>

@@ -8,12 +8,11 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class ModalTableComponent {
   displayedColumns: string[] = ['sn', 'image', 'uploadBy', 'filename', 'uploadDate', 'action'];
+  showImgDialog: boolean = false;
   onPageChange($event: Event) {
     throw new Error('Method not implemented.');
   }
   @Input() search: string = '';
-  itemsPerPage = 5;
-  currentPage = 1;
 
   data = [
     { image: '/assets/1.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
@@ -30,7 +29,7 @@ export class ModalTableComponent {
     { image: '/assets/1.png', uploadBy: 'Mihika', filename: 'file2.pdf', uploadDate: new Date() },
     { image: '/assets/1.png', uploadBy: 'Sami', filename: 'file2.pdf', uploadDate: new Date() },
     { image: '/assets/1.png', uploadBy: 'Mahiraa', filename: 'file2.pdf', uploadDate: new Date() },
-    { image: '/assets/1.png', uploadBy: 'Jane', filename: 'file2.pdf', uploadDate: new Date() },
+    { image: '/assets/2.png', uploadBy: 'Jane', filename: 'file2.pdf', uploadDate: new Date() },
   ];
 
   filteredData = [...this.data];
@@ -51,14 +50,25 @@ export class ModalTableComponent {
       );
     }
   }
-  constructor(private dialog: MatDialog) { }
-
-  openImageDialog(image: string) {
-    this.dialog.open(ImageDialogComponent, {
-      data: { image },
-      width: '400px',
-      height: '400px',
-      panelClass: 'image-dialog-top'
-    });
+  deleteRow(row: any): void {
+    const index = this.filteredData.indexOf(row);
+    if (index > -1) {
+      this.filteredData.splice(index, 1);
+      this.filteredData = [...this.filteredData];
+    }
+    const originalIndex = this.data.indexOf(row);
+    if (originalIndex > -1) {
+      this.data.splice(originalIndex, 1);
+      this.data = [...this.data];
+    }
   }
+  imgModalVisible = false;
+  selectedImage: string | null = null;
+
+  showImgModal(image: string): void {
+    this.selectedImage = image;
+    this.imgModalVisible = true;
+  }
+
 }
+

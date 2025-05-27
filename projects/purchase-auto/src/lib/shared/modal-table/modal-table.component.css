@@ -1,10 +1,10 @@
-::ng-deep .mat-header-row, 
+::ng-deep .mat-header-row,
 ::ng-deep .mat-header-cell {
-  background-color: #f0f0f0 !important; /* light grey */
+  background-color: #f0f0f0 !important;
 }
 
 .table-container {
-  max-height: 400px; /* adjust as needed */
+  max-height: 400px;
   overflow-y: auto;
   overflow-x: auto;
 }
@@ -13,8 +13,9 @@
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
-  
+
 }
+
 .custom-mat-table,
 .custom-mat-table th,
 .custom-mat-table td,
@@ -22,7 +23,7 @@
 .custom-mat-table thead,
 .custom-mat-table tbody {
   border: none !important;
-    align-items: center;
+  align-items: center;
 }
 
 .mat-header-cell {
@@ -30,13 +31,44 @@
   top: 0;
   background: white;
   border-bottom: 1px solid #ccc;
-  text-align: left;
+  text-align: center;
 }
 
 .mat-cell {
   padding: 2px;
   border-bottom: 1px solid #eee;
   vertical-align: middle;
+  text-align: center;
+}
+
+th.mat-header-cell.c-sn,
+td.mat-cell.c-sn {
+  width: 60px;
+}
+
+th.mat-header-cell.c-image,
+td.mat-cell.c-image {
+  width: 90px;
+}
+
+th.mat-header-cell.c-uploadBy,
+td.mat-cell.c-uploadBy {
+  width: 90px;
+}
+
+th.mat-header-cell.c-filename,
+td.mat-cell.c-filename {
+  width: 180px;
+}
+
+th.mat-header-cell.c-uploadDate,
+td.mat-cell.c-uploadDate {
+  width: 130px;
+}
+
+th.mat-header-cell.c-action,
+td.mat-cell.c-action {
+  width: 200px;
 }
 
 img {
@@ -50,4 +82,37 @@ img {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+}
+
+button.c-action {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.image-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  
+}
+
+.image-modal {
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+
+}
+.modal{
+  background: rgba(0,0,0,0.7); z-index: 2000;
 }
