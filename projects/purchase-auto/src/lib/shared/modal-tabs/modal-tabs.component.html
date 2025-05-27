@@ -7,7 +7,7 @@
   </div>
   <div class="col-md-3 d-flex justify-content-end align-items-center">
     <button mat-icon-button color="primary" (click)="openInfoModal()" class="me-2">
-      <img src="/assets/i.svg" alt="Info" width="34" height="34">
+      <img src="/assets/i.svg" alt="Info" width="40" height="40">
     </button>
     <span class="fw-semibold">Info</span>
   </div>
@@ -21,7 +21,7 @@
 <div class="row mb-3 align-items-end px-3">
   <div class="col-md-2" style="display: flex; flex: 1; min-width: 300px;">
     <mat-form-field appearance="outline" class="w-100">
-      <input matInput type="text" placeholder="Type to search..." />
+      <input matInput type="text" placeholder="Type to search..." [(ngModel)]="searchTerm"/>
     </mat-form-field>
   </div>
 
@@ -40,4 +40,4 @@
   <div class="col-md-6 d-flex align-items-center">
   </div>
 </div>
-<lib-modal-table></lib-modal-table>
+<lib-modal-table [search]="searchTerm"></lib-modal-table>

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild,   ChangeDetectorRef} from '@angular/core';
+import { AfterViewInit, Component, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { TemplateRef } from '@angular/core';
 @Component({
   selector: 'lib-modal-tabs',
@@ -6,9 +6,10 @@ import { TemplateRef } from '@angular/core';
   styleUrls: ['./modal-tabs.component.css']
 })
 
-export class ModalTabsComponent{
-    documentType = 'Purchase Invoice';
-      showInfoModal = false;
+export class ModalTabsComponent {
+  searchTerm: string = '';
+  documentType = 'Purchase Invoice';
+  showInfoModal = false;
   constructor(private cdr: ChangeDetectorRef) { }
 
   ngAfterViewInit() {

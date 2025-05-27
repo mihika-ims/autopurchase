@@ -1,36 +1,37 @@
+.modal-dialog {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content {
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body {
+    overflow-y: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+      overflow: hidden !important;
+}
 .modal.fade.show.d-block {
   background-color: rgba(0, 0, 0, 0.5) !important;
   z-index: 1050;
 }
 
 .modal-dialog.modal-xl.modal-dialog-centered {
-  width: 1400px !important;
-  min-width: 1400px !important;
-  max-width: 1400px !important;
+  width: 1300px !important;
+  min-width: 1300px !important;
+  max-width: 1300px !important;
   box-sizing: border-box;
 }
+
 
 .modal-content.shadow-lg.rounded-4 {
   height: 90vh;
   max-height: 90vh;
-  overflow-y: auto;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
-}
-
-.row,
-.col-md-9,
-.col-md-3,
-.col-md-5,
-.col-md-4,
-.col-md-3 {
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-mat-form-field.w-100 {
-  width: 100%;
-  min-width: 0;
 }

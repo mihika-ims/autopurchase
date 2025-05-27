@@ -30,7 +30,12 @@
     padding: 1rem;
     justify-content: center;
 }
-
+.button{
+    background-color: #336799;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
 .btn-action {
     background-color: #336799;
     color: white;

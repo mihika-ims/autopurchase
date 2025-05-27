@@ -9,7 +9,7 @@ import { ModalInfoComponent } from '../shared/modal-info/modal-info.component';
   styleUrls: ['./purchase-ai.component.css']
 })
 export class PurchaseAiComponent {
-
+ selectedImage: string = '';
 
   showInfoModal = false;
   constructor(private cdr: ChangeDetectorRef) { }

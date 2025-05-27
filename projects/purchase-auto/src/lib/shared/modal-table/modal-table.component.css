@@ -1,16 +1,19 @@
-.custom-mat-table th, .custom-mat-table td {
-  padding: 14px 10px;
-  font-size: 14px;
+::ng-deep .mat-header-row, 
+::ng-deep .mat-header-cell {
+  background-color: #f0f0f0 !important; /* light grey */
 }
-.custom-mat-table th {
-  background: #f5f5f5;
-  font-weight: 600;
-  text-align: center; 
+
+.table-container {
+  max-height: 400px; /* adjust as needed */
+  overflow-y: auto;
+  overflow-x: auto;
 }
-.custom-mat-table td,
-.custom-mat-table tr {
-  text-align: center;
-  vertical-align: middle;
+
+.custom-mat-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  
 }
 .custom-mat-table,
 .custom-mat-table th,
@@ -19,8 +22,32 @@
 .custom-mat-table thead,
 .custom-mat-table tbody {
   border: none !important;
+    align-items: center;
 }
-.action-btn{
-  background-color: #FFFFFF;
+
+.mat-header-cell {
+  position: sticky;
+  top: 0;
+  background: white;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.mat-cell {
+  padding: 2px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+img {
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.action-btn {
+  background-color: transparent;
   border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
 }

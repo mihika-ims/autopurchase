@@ -6,7 +6,7 @@
         <span class="step" [class.active]="currentStep === 2" (click)="currentStep = 2">Step 2</span>
         <span class="step" [class.active]="currentStep === 3" (click)="currentStep = 3">Step 3</span>
       </div>
-      <button type="button" (click)="close.emit()">&times;</button>
+      <button class="button" (click)="close.emit()">&times;</button>
     </div>
 
     <div class="modal-body">
@@ -32,17 +32,17 @@
             <div style="flex: 1; min-width: 300px;">
               <div class="form-row">
                 <label for="serverName" class="form-label">Server Name</label>
-                <input id="serverName" [(ngModel)]="serverName" class="input-field" />
+                <input id="serverName" [(ngModel)]="serverName" class="input-field" placeholder="http://cnauto.qa.himshang.com.np:821/" />
               </div>
 
               <div class="form-row">
                 <label for="userName" class="form-label">User Name</label>
-                <input id="userName" [(ngModel)]="userName" class="input-field" />
+                <input id="userName" [(ngModel)]="userName" class="input-field" placeholder="Mihika" />
               </div>
 
               <div class="form-row">
                 <label for="password" class="form-label">Password</label>
-                <input id="password" [(ngModel)]="password" type="password" class="input-field" />
+                <input id="password" [(ngModel)]="password" type="password" class="input-field" placeholder="Mihika@456"/>
               </div>
             </div>
 
