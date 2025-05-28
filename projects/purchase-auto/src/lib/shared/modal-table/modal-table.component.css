@@ -42,12 +42,12 @@
 
 th.mat-header-cell.c-sn,
 td.mat-cell.c-sn {
-  width: 60px;
+  width: 40px;
 }
 
 th.mat-header-cell.c-image,
 td.mat-cell.c-image {
-  width: 90px;
+  width: 110px;
 }
 
 th.mat-header-cell.c-uploadBy,
@@ -110,9 +110,29 @@ button.c-action {
   display: flex;
   justify-content: center;
   margin: auto;
+  max-width: 80vh;
+  max-height: 80vh;
 
 }
 .modal{
   background: rgba(0,0,0,0.7); z-index: 2000;
 }
-              
+.image-overlay-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.image-overlay-wrapper img:first-child {
+  display: block;
+  width: 500px; 
+  height: auto;
+}
+
+.image-overlay-wrapper img:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}

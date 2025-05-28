@@ -9,19 +9,4 @@ import { ModalInfoComponent } from '../shared/modal-info/modal-info.component';
   styleUrls: ['./purchase-ai.component.css']
 })
 export class PurchaseAiComponent {
- selectedImage: string = '';
-
-  showInfoModal = false;
-  constructor(private cdr: ChangeDetectorRef) { }
-
-  ngAfterViewInit() {
-    this.cdr.detectChanges();
-  }
-  openInfoModal() {
-    this.showInfoModal = true;
-  }
-
-  closeInfoModal() {
-    this.showInfoModal = false;
-  }
 }

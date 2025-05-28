@@ -12,7 +12,7 @@
               </ng-container>
 
               <ng-container *ngSwitchCase="'image'">
-                <img [src]="row.image" width="40" height="40" alt="image" />
+                <img [src]="row.image" width="45" height="45" alt="image" />
               </ng-container>
 
               <ng-container *ngSwitchCase="'action'">
@@ -40,16 +40,18 @@
     </div>
     <br>
     <footer class="table-footer">
-      Pagination
+Paginate
     </footer>
   </mat-card-content>
 </mat-card>
 <div class="row align-items-center">
-  <div *ngIf="imgModalVisible" class="modal fade show d-flex justify-content-center align-items-center">
-    <div class="image-modal">
-      <img [src]="selectedImage" alt="Preview">
+  <div *ngIf="imgModalVisible" class="modal fade show d-flex justify-content-center align-items-center" (click)="closeImgModal()">
+    <div class="image-modal" (click)="$event.stopPropagation()">
+      <div class="image-overlay-wrapper" >
+        <img [src]="selectedImage">
+        <img src="/assets/scan.gif" alt="scan" >
+      </div>
       <br />
     </div>
-
   </div>
 </div>

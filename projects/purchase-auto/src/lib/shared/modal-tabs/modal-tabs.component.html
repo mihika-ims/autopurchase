@@ -6,7 +6,7 @@
     </mat-tab-group>
   </div>
   <div class="col-md-3 d-flex justify-content-end align-items-center">
-    <button mat-icon-button color="primary" (click)="openInfoModal()" class="me-2">
+    <button mat-icon-button  (click)="openInfoModal()" class="me-2">
       <img src="/assets/i.svg" alt="Info" width="40" height="40">
     </button>
     <span class="fw-semibold">Info</span>
@@ -35,7 +35,6 @@
       <option value="Receipt">Receipt</option>
     </select>
   </div>
-  <div class="col-md-5 d-flex align-items-center">
-  </div>
+  <lib-modal-table [search]="searchTerm"></lib-modal-table>
 </div>
-<lib-modal-table [search]="searchTerm"></lib-modal-table>
+

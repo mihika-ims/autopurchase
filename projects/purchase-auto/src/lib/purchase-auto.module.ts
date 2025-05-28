@@ -16,6 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatOptionModule } from '@angular/material/core';
 import { ModalInfoComponent } from './shared/modal-info/modal-info.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [PurchaseAiComponent, ModalHeaderComponent, ModalHeaderComponent, ModalTableComponent, ModalTabsComponent, ModalInfoComponent],
@@ -31,7 +32,9 @@ import { ModalInfoComponent } from './shared/modal-info/modal-info.component';
     MatOptionModule,
     MatTableModule,
     MatToolbarModule,
-    MatDialogModule],
+    MatDialogModule,
+    NgxPaginationModule
+  ],
   exports: [PurchaseAiComponent, ModalHeaderComponent, ModalTableComponent, ModalTabsComponent],
 })
 export class PurchaseAutoModule { }

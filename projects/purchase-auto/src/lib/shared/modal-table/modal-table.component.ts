@@ -11,26 +11,26 @@ export class ModalTableComponent {
   }
   @Input() search: string = '';
 
-columns = [
-  { header: 'SN', def: 'sn' },
-  { header: 'Image', def: 'image' },
-  { header: 'Upload By', def: 'uploadBy' },
-  { header: 'Filename', def: 'filename' },
-  { header: 'Upload Date', def: 'uploadDate' },
-  { header: 'Action', def: 'action' }
-];
+  columns = [
+    { header: 'SN', def: 'sn' },
+    { header: 'Image', def: 'image' },
+    { header: 'Upload By', def: 'uploadBy' },
+    { header: 'Filename', def: 'filename' },
+    { header: 'Upload Date', def: 'uploadDate' },
+    { header: 'Action', def: 'action' }
+  ];
 
-get displayedColumns(): string[] { 
-  return this.columns.map(col => col.def); 
-}
+  get displayedColumns(): string[] {
+    return this.columns.map(col => col.def);
+  }
   data = [
-    { image: '/assets/1.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date()   },
-    { image: '/assets/1.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
+    { image: '/assets/bill.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
+    { image: '/assets/bill.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
     { image: '/assets/2.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
     { image: '/assets/2.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
     { image: '/assets/1.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
     { image: '/assets/1.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
-  { image: '/assets/1.png', uploadBy: 'Mahiraa', filename: 'file2.pdf', uploadDate: new Date() },
+    { image: '/assets/1.png', uploadBy: 'Mahiraa', filename: 'file2.pdf', uploadDate: new Date() },
     { image: '/assets/2.png', uploadBy: 'Jane', filename: 'file2.pdf', uploadDate: new Date() },
     { image: '/assets/1.png', uploadBy: 'Mihika', filename: 'file2.pdf', uploadDate: new Date() },
     { image: '/assets/1.png', uploadBy: 'Sami', filename: 'file2.pdf', uploadDate: new Date() },
@@ -40,7 +40,7 @@ get displayedColumns(): string[] {
 
   filteredData = [...this.data];
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['search']) { 
+    if (changes['search']) {
       this.applySearch();
     }
   }
@@ -75,5 +75,11 @@ get displayedColumns(): string[] {
     this.selectedImage = image;
     this.imgModalVisible = true;
   }
+  closeImgModal(): void {
+    this.imgModalVisible = false;
+    this.selectedImage = null;
+  }
+
+
 }
 
