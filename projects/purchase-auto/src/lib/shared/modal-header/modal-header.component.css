@@ -1,6 +1,12 @@
-.btn-primary{
+.btn-primary {
     background-color: #336799;
     color: white;
     border: none;
     padding: 1px 15px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

@@ -16,9 +16,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatOptionModule } from '@angular/material/core';
 import { ModalInfoComponent } from './shared/modal-info/modal-info.component';
-import { ImageDialogComponent } from './shared/image-dialog/image-dialog.component';
+
 @NgModule({
-  declarations: [PurchaseAiComponent, ModalHeaderComponent, ModalHeaderComponent, ModalTableComponent, ModalTabsComponent, ModalInfoComponent, ImageDialogComponent],
+  declarations: [PurchaseAiComponent, ModalHeaderComponent, ModalHeaderComponent, ModalTableComponent, ModalTabsComponent, ModalInfoComponent],
   imports: [
     CommonModule,
     FormsModule,

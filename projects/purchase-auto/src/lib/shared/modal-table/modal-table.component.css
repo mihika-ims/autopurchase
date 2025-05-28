@@ -6,7 +6,6 @@
 .table-container {
   max-height: 400px;
   overflow-y: auto;
-  overflow-x: auto;
 }
 
 .custom-mat-table {
@@ -69,7 +68,7 @@ td.mat-cell.c-uploadDate {
 th.mat-header-cell.c-action,
 td.mat-cell.c-action {
   width: 200px;
-}
+} 
 
 img {
   object-fit: cover;
@@ -116,3 +115,4 @@ button.c-action {
 .modal{
   background: rgba(0,0,0,0.7); z-index: 2000;
 }
+              
