@@ -2,32 +2,7 @@
   background-color: #336799 !important; 
 }
 
-.mat-form-field {
-  margin-right: 16px;
-}
-
-.mat-form-field input[type="text"] {
-  padding: 6px 10px;
-   border-color: transparent;
-}
-button[mat-flat-button] {
-  margin-right: 12px;
-  min-width: 100px;
-  background-color: #336799;
-  color: white;
-}
-#documentType.form-select {
-  margin-left: 8px;
-  min-width: 160px;
-  padding: 6px 10px;
-}
-.modal{
-  background: rgba(0,0,0,0.7); 
-  z-index: 2000; 
-  position: fixed; 
-  top: 0; 
-  left: 0;
-}
-.yes{
-  margin-top: 5px;
+.mat-tab-group{
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
 }

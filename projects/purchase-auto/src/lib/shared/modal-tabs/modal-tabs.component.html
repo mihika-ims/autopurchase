@@ -1,40 +1,10 @@
 <div class="row align-items-center">
-  <div class="col-md-9">
+  <div class="col-md-12">
     <mat-tab-group>
-      <mat-tab label="Pending"></mat-tab>
-      <mat-tab label="Complete"></mat-tab>
+      <mat-tab label="Pending">  
+</mat-tab>
+      <mat-tab label="Complete">  <lib-modal-table></lib-modal-table></mat-tab>
     </mat-tab-group>
   </div>
-  <div class="col-md-3 d-flex justify-content-end align-items-center">
-    <button mat-icon-button  (click)="openInfoModal()" class="me-2">
-      <img src="/assets/i.svg" alt="Info" width="40" height="40">
-    </button>
-    <span class="fw-semibold">Info</span>
-  </div>
-  <div *ngIf="showInfoModal" class="modal fade show d-block">
-    <lib-modal-info (close)="closeInfoModal()"></lib-modal-info>
-  </div>
-</div>
-<br>
-<div class="row mb-3 align-items-end px-3">
-  <div class="col-md-3">
-    <mat-form-field appearance="outline" class="w-100">
-      <input matInput type="text" placeholder="Type to search..." [(ngModel)]="searchTerm"/>
-    </mat-form-field>
-  </div>
 
-  <div class="col-md-4 mb-2 mb-md-0 d-flex justify-content-md-center" >
-    <button mat-flat-button color="primary" class="w-100" >
-      Filter By
-    </button>
-    <label for="documentType" class="yes">DocumentType:</label>
-    <select id="documentType" class="form-select w-100" [(ngModel)]="documentType">
-      <option value="All">All</option>
-      <option value="Purchase Invoice">Purchase Invoice</option>
-      <option value="Purchase Order">Purchase Order</option>
-      <option value="Receipt">Receipt</option>
-    </select>
-  </div>
-  <lib-modal-table [search]="searchTerm"></lib-modal-table>
 </div>
-

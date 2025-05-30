@@ -5,10 +5,11 @@ import { Component, Input, SimpleChanges } from '@angular/core';
   styleUrls: ['./modal-table.component.css']
 })
 export class ModalTableComponent {
+  searchTerm: string = '';
+  documentType = 'Purchase Invoice';
+  showInfoModal = false;
   showImgDialog: boolean = false;
-  onPageChange($event: Event) {
-    throw new Error('Method not implemented.');
-  }
+
   @Input() search: string = '';
 
   columns = [
@@ -25,16 +26,16 @@ export class ModalTableComponent {
   }
   data = [
     { image: '/assets/bill.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
-    { image: '/assets/bill.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
-    { image: '/assets/2.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
-    { image: '/assets/2.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
-    { image: '/assets/1.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
-    { image: '/assets/1.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
+    { image: '/assets/bill.png', uploadBy: 'jeena', filename: 'file1.pdf', uploadDate: new Date() },
+    { image: '/assets/2.png', uploadBy: 'elsa', filename: 'file1.pdf', uploadDate: new Date() },
+    { image: '/assets/2.png', uploadBy: 'kiran', filename: 'file1.pdf', uploadDate: new Date() },
+    { image: '/assets/1.png', uploadBy: 'ishan', filename: 'file1.pdf', uploadDate: new Date() },
+    { image: '/assets/1.png', uploadBy: 'saksham', filename: 'file1.pdf', uploadDate: new Date() },
     { image: '/assets/1.png', uploadBy: 'Mahiraa', filename: 'file2.pdf', uploadDate: new Date() },
     { image: '/assets/2.png', uploadBy: 'Jane', filename: 'file2.pdf', uploadDate: new Date() },
     { image: '/assets/1.png', uploadBy: 'Mihika', filename: 'file2.pdf', uploadDate: new Date() },
     { image: '/assets/1.png', uploadBy: 'Sami', filename: 'file2.pdf', uploadDate: new Date() },
-    { image: '/assets/1.png', uploadBy: 'Mahiraa', filename: 'file2.pdf', uploadDate: new Date() },
+    { image: '/assets/1.png', uploadBy: 'Maria', filename: 'file2.pdf', uploadDate: new Date() },
     { image: '/assets/2.png', uploadBy: 'Jane', filename: 'file2.pdf', uploadDate: new Date() },
   ];
 
@@ -78,6 +79,23 @@ export class ModalTableComponent {
   closeImgModal(): void {
     this.imgModalVisible = false;
     this.selectedImage = null;
+  }
+
+  //pagination ko lagi
+  p: number = 0; 
+  itemsPerPage: number = 5;
+
+  get filteredDataPaginated() {
+    const start = (this.p - 1) * this.itemsPerPage;
+    return this.filteredData.slice(start, start + this.itemsPerPage);
+  }
+
+  openInfoModal() {
+    this.showInfoModal = true;
+  }
+
+  closeInfoModal() {
+    this.showInfoModal = false;
   }
 
 

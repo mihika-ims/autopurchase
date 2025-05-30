@@ -6,6 +6,7 @@
 .table-container {
   max-height: 400px;
   overflow-y: auto;
+  position: relative;
 }
 
 .custom-mat-table {
@@ -135,4 +136,45 @@ button.c-action {
   width: 100%;
   height: 100%;
   pointer-events: none;
+}
+.table-footer{
+  min-width: 60px;
+  margin-left: 8px;
+  align-items: center;
+  justify-self: unset;
+}
+
+
+.mat-form-field {
+  margin-right: 16px;
+}
+
+.mat-form-field input[type="text"] {
+  padding: 6px 10px;
+   border-color: transparent;
+}
+button[mat-flat-button] {
+  margin-right: 12px;
+  min-width: 100px;
+  background-color: #336799;
+  color: white;
+}
+#documentType.form-select {
+  margin-left: 8px;
+  min-width: 160px;
+  padding: 6px 10px;
+}
+.modal{
+  background: rgba(0,0,0,0.7); 
+  z-index: 2000; 
+  position: fixed; 
+  top: 0; 
+  left: 0;
+}
+.yes{
+  margin-top: 5px;
+}
+.table-footer .form-select {
+  min-width: 60px;
+  margin-left: 8px;
 }
