@@ -1,3 +1,2 @@
-
 <button (click)="showPurchaseAI = true">Auto Purchase</button>
-<lib-purchase-ai *ngIf="showPurchaseAI"></lib-purchase-ai>
+<lib-purchase-ai *ngIf="showPurchaseAI" (closePurchaseAI)="showPurchaseAI = false"></lib-purchase-ai>

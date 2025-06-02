@@ -9,4 +9,4 @@ export * from './lib/shared/modal-header/modal-header.component';
 export * from './lib/shared/modal-table/modal-table.component';
 export * from './lib/shared/modal-info/modal-info.component';
 export * from './lib/shared/modal-tabs/modal-tabs.component';
-export * from './lib/shared/image-dialog/image-dialog.component';
+export * from './lib/shared/detail-info/detail-info.component';

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { PurchaseAiComponent } from './purchase-ai/purchase-ai.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
@@ -14,13 +14,17 @@ import { ModalTableComponent } from './shared/modal-table/modal-table.component'
 import { ModalTabsComponent } from './shared/modal-tabs/modal-tabs.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatOptionModule } from '@angular/material/core';
+import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { ModalInfoComponent } from './shared/modal-info/modal-info.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { DetailInfoComponent } from './shared/detail-info/detail-info.component';
+import { SupplierInfoComponent } from './shared/supplier-info/supplier-info.component';
+import { ProductTableComponent } from './shared/product-table/product-table.component';
 
 @NgModule({
-  declarations: [PurchaseAiComponent, ModalHeaderComponent, ModalHeaderComponent, ModalTableComponent, ModalTabsComponent, ModalInfoComponent],
+  declarations: [PurchaseAiComponent, ModalHeaderComponent, ModalHeaderComponent, ModalTableComponent, ModalTabsComponent, ModalInfoComponent, DetailInfoComponent, SupplierInfoComponent, ProductTableComponent],
   imports: [
+    ReactiveFormsModule,
     CommonModule,
     FormsModule,
     MatTabsModule,
@@ -33,7 +37,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MatTableModule,
     MatToolbarModule,
     MatDialogModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatNativeDateModule
   ],
   exports: [PurchaseAiComponent, ModalHeaderComponent, ModalTableComponent, ModalTabsComponent],
 })

@@ -1,0 +1,28 @@
+<div class="suppliers">
+<form [formGroup]="supplierForm" class="form-row">
+  <div class="form-group">
+    <label>Supplier Name</label>
+    <select formControlName="supplierName" (change)="onSupplierChange($event)">
+      <option value="">Select</option>
+      <option *ngFor="let supplier of suppliers" [value]="supplier.name">
+        {{ supplier.name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>VAT No</label>
+    <input type="text" formControlName="vatNo" readonly />
+  </div>
+
+  <div class="form-group">
+    <label>Invoice No</label>
+    <input type="text" formControlName="invoiceNo" />
+  </div>
+
+  <div class="form-group">
+    <label>Invoice Date</label>
+    <input type="date" formControlName="invoiceDate" />
+  </div>
+</form>
+</div>

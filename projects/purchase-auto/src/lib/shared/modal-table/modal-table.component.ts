@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'lib-modal-table',
   templateUrl: './modal-table.component.html',
@@ -43,7 +43,13 @@ export class ModalTableComponent {
     { image: '/assets/1.png', uploadBy: 'Ruby', filename: 'file3.pdf', uploadDate: new Date() },
     { image: '/assets/2.png', uploadBy: 'Pony', filename: 'file4.pdf', uploadDate: new Date() },
   ];
+  @Output() imageSelected = new EventEmitter<string>();
 
+  onLibraryImageSelected(imageUrl: string) {
+  this.selectedImage = imageUrl;
+  this.showDetailInfo = false;
+  this.imageSelected.emit(imageUrl); // Emit to parent
+}
 
   get currentData() {
     return this.tabType === 'pending' ? this.pendingData : this.completedData;
@@ -61,18 +67,32 @@ export class ModalTableComponent {
 
   imgModalVisible = false;
   selectedImage: string | null = null;
+  private imgModalTimer: any;
+  showDetailInfo = false;
 
-  showImgModal(image: string): void {
+  @Output() closePurchaseAI = new EventEmitter<void>();
+
+  showImgModal(image: string){
     this.selectedImage = image;
     this.imgModalVisible = true;
+    this.imgModalTimer = setTimeout(() => {
+      this.imgModalVisible = false;
+      this.showDetailInfo = true;
+       this.closePurchaseAI.emit(); 
+  }, 2000);
   }
+
   closeImgModal(): void {
     this.imgModalVisible = false;
     this.selectedImage = null;
+    if (this.imgModalTimer) {
+      clearTimeout(this.imgModalTimer);
+      this.imgModalTimer = null;
+    }
+    this.showDetailInfo = false;
   }
-
   //pagination ko lagi
-  p: number = 1; 
+  p: number = 1;
   itemsPerPage: number = 5;
 
   get filteredDataPaginated() {

@@ -1,0 +1,66 @@
+
+.content-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.table-container {
+  flex: 1;
+  overflow-x: auto;
+    flex-direction: row;
+  gap: 10px;
+  display: flex;
+  width: 100%;
+}
+
+.scrollable-table {
+  max-height: 500px; 
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.image-box {
+  flex-shrink: 0;
+  padding-top: 10px;
+}
+
+
+.full-table {
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+} 
+
+.mat-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+}
+.mat-table th,
+.mat-table td,
+.mat-table tr{
+    border: none !important;
+    align-items: center;
+}
+
+.image-box {
+  width: 400px;
+  padding: 8px;
+  height: fit-content;
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.mat-header-cell, .mat-cell {
+  text-align: center;
+  word-wrap: break-word;
+  padding: 8px;
+}
+

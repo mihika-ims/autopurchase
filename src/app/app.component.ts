@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
  showPurchaseAI = false;
+
+  onClosePurchaseAI() {
+  this.showPurchaseAI = false;
+}
 }
