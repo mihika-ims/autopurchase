@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input} from '@angular/core';
 @Component({
   selector: 'lib-modal-table',
   templateUrl: './modal-table.component.html',
@@ -9,8 +9,7 @@ export class ModalTableComponent {
   documentType = 'Purchase Invoice';
   showInfoModal = false;
   showImgDialog: boolean = false;
-
-  @Input() search: string = '';
+  @Input() tabType: 'pending' | 'completed' = 'pending';
 
   columns = [
     { header: 'SN', def: 'sn' },
@@ -24,7 +23,7 @@ export class ModalTableComponent {
   get displayedColumns(): string[] {
     return this.columns.map(col => col.def);
   }
-  data = [
+  pendingData = [
     { image: '/assets/bill.png', uploadBy: 'Mimi', filename: 'file1.pdf', uploadDate: new Date() },
     { image: '/assets/bill.png', uploadBy: 'jeena', filename: 'file1.pdf', uploadDate: new Date() },
     { image: '/assets/2.png', uploadBy: 'elsa', filename: 'file1.pdf', uploadDate: new Date() },
@@ -38,37 +37,28 @@ export class ModalTableComponent {
     { image: '/assets/1.png', uploadBy: 'Maria', filename: 'file2.pdf', uploadDate: new Date() },
     { image: '/assets/2.png', uploadBy: 'Jane', filename: 'file2.pdf', uploadDate: new Date() },
   ];
+  completedData = [
+    { image: '/assets/bill.png', uploadBy: 'Sampada', filename: 'file1.pdf', uploadDate: new Date() },
+    { image: '/assets/2.png', uploadBy: 'Yana', filename: 'file2.pdf', uploadDate: new Date() },
+    { image: '/assets/1.png', uploadBy: 'Ruby', filename: 'file3.pdf', uploadDate: new Date() },
+    { image: '/assets/2.png', uploadBy: 'Pony', filename: 'file4.pdf', uploadDate: new Date() },
+  ];
 
-  filteredData = [...this.data];
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['search']) {
-      this.applySearch();
-    }
+
+  get currentData() {
+    return this.tabType === 'pending' ? this.pendingData : this.completedData;
   }
-  applySearch() {
-    if (!this.search) {
-      this.filteredData = this.data;
-    } else {
-      const term = this.search.toLowerCase();
-      this.filteredData = this.data.filter(item =>
-        Object.values(item).some(val =>
-          String(val).toLowerCase().includes(term)
-        )
-      );
-    }
+
+  get filteredData() {
+    const term = this.searchTerm.trim().toLowerCase();
+    if (!term) return this.currentData;
+    return this.currentData.filter(item =>
+      Object.values(item).some(val =>
+        String(val).toLowerCase().includes(term)
+      )
+    );
   }
-  deleteRow(row: any): void {
-    const index = this.filteredData.indexOf(row);
-    if (index > -1) {
-      this.filteredData.splice(index, 1);
-      this.filteredData = [...this.filteredData];
-    }
-    const originalIndex = this.data.indexOf(row);
-    if (originalIndex > -1) {
-      this.data.splice(originalIndex, 1);
-      this.data = [...this.data];
-    }
-  }
+
   imgModalVisible = false;
   selectedImage: string | null = null;
 
@@ -82,7 +72,7 @@ export class ModalTableComponent {
   }
 
   //pagination ko lagi
-  p: number = 0; 
+  p: number = 1; 
   itemsPerPage: number = 5;
 
   get filteredDataPaginated() {
@@ -97,7 +87,6 @@ export class ModalTableComponent {
   closeInfoModal() {
     this.showInfoModal = false;
   }
-
 
 }
 

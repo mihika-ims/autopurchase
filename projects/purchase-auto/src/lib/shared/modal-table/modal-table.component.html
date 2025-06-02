@@ -1,5 +1,4 @@
 
-<br>
 <div class="row mb-3 align-items-end px-3">
   <div class="col-md-3">
     <mat-form-field appearance="outline" class="w-100">
@@ -52,7 +51,7 @@
                   <img src="/assets/star.gif" alt="star" width="25" height="25">
                   Proceed with AI
                 </button>
-                <button class="action-btn" (click)="deleteRow(row)">
+                <button class="action-btn">
                   <img src="/assets/del.svg" alt="del" width="20" height="20">
                 </button>
               </ng-container>
@@ -71,18 +70,18 @@
       </table>
     </div>
     <br>
-<mat-card-footer class="table-footer">
-  <div class="d-flex justify-content-center"> 
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
-  </div>
- 
-  <div class="d-flex align-items-right mb-2 justify-content-end">
-    <label for="rowsPerPage" class="me-2">Rows per page:</label>
-    <select id="rowsPerPage" [(ngModel)]="itemsPerPage" class="form-select form-select-sm w-auto">
-      <option *ngFor="let size of [2, 4, 6, 8, 10, 20]" [value]="size">{{ size }}</option>
-    </select>
-  </div>
-</mat-card-footer>
+    <mat-card-footer class="table-footer">
+      <div class="d-flex justify-content-center">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+
+      <div class="d-flex align-items-right mb-2 justify-content-end">
+        <label for="rowsPerPage" class="me-2">Rows per page:</label>
+        <select id="rowsPerPage" [(ngModel)]="itemsPerPage" class="form-select form-select-sm w-auto">
+          <option *ngFor="let size of [2, 4, 6, 8, 10, 20]" [value]="size">{{ size }}</option>
+        </select>
+      </div>
+    </mat-card-footer>
   </mat-card-content>
 </mat-card>
 
@@ -98,4 +97,3 @@
     </div>
   </div>
 </div>
-

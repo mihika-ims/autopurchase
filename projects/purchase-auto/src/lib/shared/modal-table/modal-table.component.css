@@ -6,6 +6,7 @@
 .table-container {
   max-height: 400px;
   overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -125,7 +126,7 @@ button.c-action {
 
 .image-overlay-wrapper img:first-child {
   display: block;
-  width: 500px; 
+  width: 400px; 
   height: auto;
 }
 
@@ -177,4 +178,58 @@ button[mat-flat-button] {
 .table-footer .form-select {
   min-width: 60px;
   margin-left: 8px;
+}
+@media (max-width: 1000px) {
+  .image-modal {
+    max-width: 95vw;
+    max-height: 60vh;
+  }
+  .image-overlay-wrapper img:first-child {
+    width: 300px;
+  }
+  .custom-mat-table th,
+  .custom-mat-table td {
+    font-size: 12px;
+    padding: 2px 4px;
+  }
+  th.mat-header-cell.c-filename,
+  td.mat-cell.c-filename {
+    width: 120px;
+  }
+  th.mat-header-cell.c-action,
+  td.mat-cell.c-action {
+    width: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-modal {
+    max-width: 99vw;
+    max-height: 40vh;
+    border-radius: 4px;
+  }
+  .image-overlay-wrapper img:first-child {
+    width: 160px;
+  }
+  .custom-mat-table th,
+  .custom-mat-table td {
+    font-size: 10px;
+    padding: 1px 2px;
+  }
+  .mat-form-field,
+  button[mat-flat-button],
+  #documentType.form-select {
+    margin-right: 4px;
+    min-width: 60px;
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+  th.mat-header-cell.c-filename,
+  td.mat-cell.c-filename {
+    width: 80px;
+  }
+  th.mat-header-cell.c-action,
+  td.mat-cell.c-action {
+    width: 80px;
+  }
 }

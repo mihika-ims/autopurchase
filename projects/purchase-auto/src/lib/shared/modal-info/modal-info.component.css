@@ -50,7 +50,7 @@
     background-color: #e3f2fd;
     padding: 1rem;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 12px;
 
 }
 
@@ -104,4 +104,42 @@
     min-width: 120px;
     font-size: 16px;
     font-weight: 500;
+}
+@media (max-width: 768px) {
+  .stepper-header {
+    gap: 0.5rem;
+    font-size: 13px;
+  }
+  .instruction-image {
+    width: 120px;
+    margin-top: 6px;
+  }
+   .qr-img img {
+    max-width: 120px;
+    width: 100%;
+    height: auto;
+  }
+  .formstyle {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .formform {
+    min-width: 180px;
+  }
+  .form-label,
+  .input-field,
+  .note {
+    font-size: 10px;
+  }
+  .otp-display {
+    font-size: 13px;
+    padding: 0.5rem 1rem;
+    min-width: 80px;
+  }
+  .actions {
+    padding: 0.5rem;
+  }
+  .qr-img {
+    margin: 0.5rem 0;
+  }
 }

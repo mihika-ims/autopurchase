@@ -1,10 +1,12 @@
 <div class="row align-items-center">
   <div class="col-md-12">
     <mat-tab-group>
-      <mat-tab label="Pending">  
-</mat-tab>
-      <mat-tab label="Complete">  <lib-modal-table></lib-modal-table></mat-tab>
+      <mat-tab label="Pending">
+        <lib-modal-table [tabType]="'pending'"></lib-modal-table>
+      </mat-tab>
+      <mat-tab label="Complete">
+        <lib-modal-table [tabType]="'completed'"></lib-modal-table>
+      </mat-tab>
     </mat-tab-group>
   </div>
-
 </div>

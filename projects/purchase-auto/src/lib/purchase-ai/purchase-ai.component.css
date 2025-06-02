@@ -46,9 +46,17 @@
     max-height: 95vh;
     margin-top: 10px;
     border-radius: 12px;
+     overflow: hidden;         /* Prevent overflow outside modal */
+  box-sizing: border-box;
   }
 
   .modal-body {
     padding: 10px;
+    font-size: 11px;
+      overflow-y: auto;   
+        width: 100%;
+  box-sizing: border-box;
+  padding: 16px;      /* Scroll only inside modal body if needed */
+  overflow-x: hidden; 
   }
 }
