@@ -1,0 +1,28 @@
+<div class="modal-popup-bottom-right">
+    <div class="modal-dialog-custom">
+        <div class="modal-content shadow-lg">
+            <div class="modal-header  text-white d-flex justify-content-between align-items-center">
+                <span>Suggested Item Name</span>
+                <button class="btn-close text-white" (click)="onClose()">&times;</button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="d-flex align-items-center p-3 pb-2">
+                    <mat-form-field appearance="outline" class="form flex-grow-1 me-2 mb-0">
+                        <input matInput placeholder="Search..." />
+                    </mat-form-field>&nbsp;
+                    <button mat-button class="itembtn" (click)="openShowAllItems()" (click)="onClose()">Show All Items</button>
+                </div>
+                <div class="item-cont" style="padding:15px ;">
+                    <div class="title text-white px-3 py-2 fw-bold">
+                        Item Name
+                    </div>
+                    <div>
+                        <div *ngFor="let item of items" class="item-option px-3 py-2 border-bottom">
+                            {{ item }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

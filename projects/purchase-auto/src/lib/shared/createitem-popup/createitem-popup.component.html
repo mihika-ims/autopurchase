@@ -1,0 +1,54 @@
+<div class="modal-overlay"></div>
+<div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content shadow-lg rounded-4">
+        <div class="modal-header  text-white d-flex justify-content-between align-items-center">
+            <span>Create Item</span>
+            <button class="btn-close" (click)="onClose()">&times;</button>
+        </div>
+
+        <div class="modal-body">
+            <div class="formstyle">
+                <div class="formform">
+                    <div class="form-row">
+                        <label for="itemName" class="form-label">Item Name:</label>
+                        <input id="itemName" [(ngModel)]="itemName" class="input-field" placeholder="Enter Item name" />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="itemCode" class="form-label">Item Code:</label>
+                        <input id="itemCode" [(ngModel)]="itemCode" class="input-field" placeholder="Enter Item Code" />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="hsCode" class="form-label">HS Code:</label>
+                        <input id="hsCode" [(ngModel)]="hsCode" class="input-field" placeholder="Enter HS code" />
+                        <input type="checkbox" id="hsCodeCheckbox" />Is Vatable Item
+                    </div>
+                    <div class="form-row">
+                        <label for="itemGroup" class="form-label">Item Group:</label>
+                        <input id="itemGroup" [(ngModel)]="itemGroup" class="input-field"
+                            placeholder="Enter Item Group" />
+                    </div>
+                    <div class="form-row">
+                        <label for="stockUnit" class="form-label">Stock Unit:</label>
+                        <input id="stockUnit" [(ngModel)]="stockUnit" class="input-field"
+                            placeholder="Enter Stock Unit" />
+                    </div>
+                    <div class="form-row">
+                        <label for="itemType" class="form-label">Item Type:</label>
+                        <input id="itemType" [(ngModel)]="itemType" class="input-field" placeholder="Enter Item Type" />
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Inside your .footer div -->
+            <div class="footer">
+                <button class="save-btn">SAVE</button>
+                <button class="cancel-btn" (click)="onClose()">CANCEL</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>

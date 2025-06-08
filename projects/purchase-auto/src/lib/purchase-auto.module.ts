@@ -20,9 +20,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { DetailInfoComponent } from './shared/detail-info/detail-info.component';
 import { SupplierInfoComponent } from './shared/supplier-info/supplier-info.component';
 import { ProductTableComponent } from './shared/product-table/product-table.component';
+import { SuggestPopupComponent } from './shared/suggest-popup/suggest-popup.component';
+import { AllitemPopupComponent } from './shared/allitem-popup/allitem-popup.component';
+import { CreateitemPopupComponent } from './shared/createitem-popup/createitem-popup.component';
 
 @NgModule({
-  declarations: [PurchaseAiComponent, ModalHeaderComponent, ModalHeaderComponent, ModalTableComponent, ModalTabsComponent, ModalInfoComponent, DetailInfoComponent, SupplierInfoComponent, ProductTableComponent],
+  declarations: [PurchaseAiComponent, ModalHeaderComponent, ModalHeaderComponent, ModalTableComponent, ModalTabsComponent, ModalInfoComponent, DetailInfoComponent, SupplierInfoComponent, ProductTableComponent, SuggestPopupComponent, AllitemPopupComponent, CreateitemPopupComponent],
   imports: [
     ReactiveFormsModule,
     CommonModule,

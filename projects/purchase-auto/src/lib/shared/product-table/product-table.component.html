@@ -5,19 +5,27 @@
         <ng-container *ngFor="let column of columns" [matColumnDef]="column.def">
           <th mat-header-cell *matHeaderCellDef>{{ column.header }}</th>
           <td mat-cell *matCellDef="let row; let i = index">
-            <ng-container [ngSwitch]="column.def">
-              <ng-container *ngSwitchCase="'sn'">
-                {{ i + 1 }}
+            <div class="cell-box" *ngIf="column.def !== 'verify'; else checkboxCell"
+              [ngClass]="{'no-border': column.def === 'sn','cell-box': true,'clickable': column.def === 'suggestedItem'}"
+              (click)="column.def === 'suggestedItem' && openPopup(column.def, row)"
+              (keydown.enter)="column.def === 'suggestedItem' && (row[column.def] === null || row[column.def] === '' ? openPopup(column.def, row) : null)"
+              [ngStyle]="{'border-bottom': column.def !== 'sn' ? '2px solid ' + getBorderColorForRow(row) : 'none'}"
+              tabindex="{{column.def === 'suggestedItem' ? 0 : -1}}">
+              <ng-container [ngSwitch]="column.def">
+                <ng-container *ngSwitchCase="'sn'">
+                  {{ i + 1 }}
+                </ng-container>
+                <ng-container *ngSwitchDefault>
+                  {{ row[column.def] || '-Enter-' }}
+                </ng-container>
               </ng-container>
-              <ng-container *ngSwitchCase="'verify'">
+            </div>
+
+            <ng-template #checkboxCell>
+              <div class="cell-box no-border">
                 <input type="checkbox" [(ngModel)]="row.verify" />
-              </ng-container>
-              <ng-container *ngSwitchDefault>
-                <span>
-                  {{ row[column.def] }}
-                </span>
-              </ng-container>
-            </ng-container>
+              </div>
+            </ng-template>
           </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
