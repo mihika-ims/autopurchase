@@ -8,6 +8,12 @@ import { AllitemPopupComponent } from '../allitem-popup/allitem-popup.component'
   styleUrls: ['./suggest-popup.component.css']
 })
 export class SuggestPopupComponent {
+  searchTerm: string= '';
+  filteredItems(): string[] {
+  if (!this.searchTerm) return this.items;
+  const lowerTerm = this.searchTerm.toLowerCase();
+  return this.items.filter(item => item.toLowerCase().includes(lowerTerm));
+}
 
   items = ['handwash', 'dettol', 'soap', 'spray'];
   constructor(private dialogRef: MatDialogRef<SuggestPopupComponent>, private dialog:MatDialog) { }

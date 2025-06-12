@@ -19,6 +19,9 @@ export class CreateitemPopupComponent {
   itemGroup: string = '';
   stockUnit: string = '';
   itemType: string = '';
+  stockUnits: string[] = ['Kg', 'Litre', 'Piece', 'Box'];
+itemTypes: string[] = ['Raw Material', 'Finished Product', 'Service', 'Consumable'];
+
 
 }
 

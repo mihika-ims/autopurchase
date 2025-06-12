@@ -48,7 +48,7 @@ export class ModalTableComponent {
   onLibraryImageSelected(imageUrl: string) {
   this.selectedImage = imageUrl;
   this.showDetailInfo = false;
-  this.imageSelected.emit(imageUrl); // Emit to parent
+  this.imageSelected.emit(imageUrl); 
 }
 
   get currentData() {
