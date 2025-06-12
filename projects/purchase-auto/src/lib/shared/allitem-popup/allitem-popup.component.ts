@@ -15,13 +15,13 @@ export class AllitemPopupComponent {
     { itemCode: '112137', description: 'Spray', groupName: 'Cleaning ', stock: 80 },
   ]
     
-    constructor(private dialogRef: MatDialogRef<AllitemPopupComponent>, private dialog:MatDialog) { }
-    onClose(): void {
-      this.dialogRef.close();
-    }
-      createItem(): void {
+  constructor(private dialogRef: MatDialogRef<CreateitemPopupComponent>, private dialog:MatDialog) { }
+  onClose(): void {
+    this.dialogRef.close();
+  }
+    openShowAllItems(): void {
     this.dialog.open(CreateitemPopupComponent, {
-      width: '600px'
+      width: '500px'
     });
-}
+  }
 }

@@ -51,19 +51,6 @@
   
 }
 
-.image-box {
-  width: 400px;
-  padding: 8px;
-  height: fit-content;
-}
-
-.image-box img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-
 .mat-header-cell,
 .mat-cell {
   text-align: center;
@@ -92,3 +79,22 @@
   cursor: default;
   border-bottom: none !important;
 }
+.image-container {
+  width: 350px;      
+  margin: 20px auto;    
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  overflow: hidden;
+  background: #fff;
+  padding: 8px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.2s;
+  cursor: zoom-in;
+}
+

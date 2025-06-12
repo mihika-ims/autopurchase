@@ -65,7 +65,7 @@ export class ProductTableComponent {
   selectedColumn: string | null = null;
   selectedRow: any = null;
 
-  openPopup(columnDef: string, row:any): void {
+  openPopup(columnDef: string, row: any): void {
     this.selectedColumn = columnDef;
     this.selectedRow = row;
 
